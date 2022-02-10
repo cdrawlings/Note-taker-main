@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 list-container mt-4">
+      <div class="card ">
+        <ul class="list-group">
+          {{#each notes as |note|}}
+          <li class="note-item">
+            <a href="notes/{{note.id}}">{{note.title}}</a> 
+
+            <form action="/notes/delete/{{note.id}}" method="post" class="form-group">
+            
+              <input type="hidden" name="_method" value="delete">
+              <button type="submit" class="delete-button"><i class="far fa-trash-alt"></i></button>
+            </form>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-8 mt-4">
+      <form action="/notes" method="post" class="form-group">
+        <input class="note-title form-control" placeholder="Note Title" maxlength="28" type="text" id="title"
+          name="title" value="" />
+        <textarea class="note-textarea form-control" placeholder="Note Text" id="note" name="note" value=""></textarea>
+        <button type="submit" class="icons"><i class="fa-thin fa-floppy-disk"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
