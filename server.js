@@ -7,7 +7,7 @@ const methodOverride = require ("method-override");
 
 const app = express();
 // Assigns the port
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT;
 
 // Allowsexpress to get data from forms
 app.use(bodyParser.urlencoded({extended:true}));
